@@ -1,0 +1,25 @@
+<section n:imported="components/docs/section"/>
+<highlight n:imported="components/docs/highlight"/>
+<code n:imported="components/docs/codeblock"/>
+<template>
+    <div style="display:none;"><code></code></div>
+    <section title="Reactivity">
+        In Nijor, we can define <highlight>reactive variables</highlight>.
+        Reactive variables are defined as properties of the window.nijor.reactiveVars object. You can use the syntax, <highlight>window.nijor.reactiveVars['varname']</highlight> to create a reactive variable. To access the value of a reactive variable inside the template tag, use the <highlight>\{\{varname}}</highlight> syntax.
+        <code>
+            &lt;template&gt;
+                &lt;!--To fetch the value of a reactive variable within the Nijor template, use \{\{variable}} --&gt;
+                &lt;!--Whenever the value of window.nijor.reactiveVars['count'] changes, the value of \{\{count}} will automatically change--&gt;
+                &lt;button on:click="UpdateCount()"&gt;\{\{count}}&lt;/button&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+                window.nijor.reactiveVars['count'] = 1; 
+                // window.nijor.reactiveVars is a special object which contains a key-value pair of reactive variables and their values.
+                // Changes in values of reactive variables get reflected on the DOM only.
+                function UpdateCount()\{
+                    window.nijor.reactiveVars['count']+=1;
+                }
+            &lt;/script&gt;
+        </code>
+    </section>
+</template>

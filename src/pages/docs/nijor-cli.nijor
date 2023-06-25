@@ -1,0 +1,30 @@
+<section n:imported="components/docs/section"/>
+<highlight n:imported="components/docs/highlight"/>
+<code n:imported="components/docs/codeblock"/>
+<template>
+    <div style="display:none;"><code></code></div>
+    <section title="Nijor-CLI"></section>
+    <section title="Intorduction">
+        The <highlight>nijor-cli</highlight> is a CLI tool which allows to work in Nijor. <br>
+    </section>
+    <section title="nijor create">
+        The <highlight>nijor create</highlight> command creates a new folder and generates some boilerplate code.
+        To create a new Nijor project, type the following commands. (Write your project's name instead of \{Appname} )
+        <code lang="bash">nijor create \{AppName}</code>
+        <code lang="bash">cd \{AppName}</code>
+    </section>
+    <section title="nijor serve">
+        The <highlight>nijor serve</highlight> command runs a development server for the Nijor Project.
+        <code lang="bash">nijor serve</code>
+    </section>
+    <section title="nijor compile">
+        The <highlight>nijor compile</highlight> command compiles the all the <highlight>*.nijor</highlight> files to browser readable JS and CSS code.
+        <code lang="bash">nijor compile</code>
+        To watch for changes, type
+        <code lang="bash">nijor compile -w</code>
+    </section>
+    <section title="nijor build">
+        The <highlight>nijor build</highlight> command is very similar to the<highlight>nijor compile</highlight> command. The only differnce between the 2 is that <highlight>nijor build</highlight> minifies the JS code.
+        <code lang="bash">nijor build</code>
+    </section>
+</template>

@@ -1,0 +1,17 @@
+{
+    "app":{
+        "name":"nijor-docs"
+    },
+    "module":{
+        "input":"src/App.js",
+        "output":"assets/modules"
+    },
+    "styles":{
+        "input":"src/styles/style.scss",
+        "output":"assets/style.css"
+    },
+    "server":{
+        "port":3000,
+        "appdir":""
+    }
+}

@@ -1,0 +1,29 @@
+<template specs={title,_text_}>
+    <div class="section">
+        <h1>{ title }</h1>
+        <p>{_text_ || ''}</p>
+        <div class="border"></div>
+    </div>
+</template>
+<style>
+    .section{
+        width: 100%;
+        padding: 0.5rem;
+    }
+    h1{
+        font-size: 2.4rem;
+        font-weight: bold;
+        margin: 0.5rem 0rem;
+    }
+    p{
+        margin-top: 0.5rem;
+        font-size: 1.6rem;
+    }
+    .border{
+        margin-top: 0.5rem;
+        width: 100%;
+        height: 0.5px;
+        color:rgb(102, 102, 102);
+        background-color:rgb(102, 102, 102);
+    }
+</style>

@@ -1,0 +1,50 @@
+<section n:imported="components/docs/section"/>
+<highlight n:imported="components/docs/highlight"/>
+<code n:imported="components/docs/codeblock"/>
+<template>
+    <section title="Custom Events">
+        We can create custom events in Nijor. What it means is that, just like events like <highlight>on:click</highlight> exist in Nijor, we can create our own event like <highlight>on:myevent</highlight>.
+        It's pretty easy to do so. <br>
+        Let's consider a component <highlight>msg.nijor</highlight> which uses a custom event <highlight>on:msg</highlight>. Whenever a message is send from the <highlight>send.nijor</highlight>, the sender's name and message gets printed in the paragraph tag. <br><br>
+        
+        <code file="src/page/msg.nijor">
+            &lt;template&gt;
+                &lt;div&gt;
+                    &lt;p id="msg" on:msg="PrintMsg($data)"&gt;
+                &lt;/div&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+            function PrintMsg(msgdata)\{
+                document.getElementById('msg').innerHTML += `\$\{msgdata.name} : \$\{msgdata.text} &lt;br&gt;`;
+            }
+            &lt;/script&gt;
+            &lt;script defer&gt;
+                // element.addEventListener doesn't work for custom events.
+                // document.getElementById('msg').addEventListener('msg',($data)=>PrintMsg($data)); doesn't work for custom events.
+            &lt;/script&gt;
+        </code>
+
+        <div style="display:none;"><code></code></div>
+
+        <code file="src/page/send.nijor">
+            &lt;template&gt;
+                &lt;div&gt;
+                    &lt;input id="name"&gt;
+                    &lt;input id="message"&gt;
+                    &lt;input type="button" on:click="SendMsg()" value="Send"&gt;
+                &lt;/div&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+            function SendMsg(msgdata)\{
+                let name = document.getElementById('name');
+                let message = document.getElementById('message');
+                let data = \{name:name,text:message};
+
+                // This fires the 'on:msg' event across all the components that are currently in use.
+                // All the elements with on:msg events' function's $data get replaced by \{name:name,text:message}
+                window.nijor.emitEvent('msg',data);
+            }
+            &lt;/script&gt;
+        </code>
+    </section>
+</template>

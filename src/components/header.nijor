@@ -1,0 +1,117 @@
+<style>
+    .container{
+        width: 100vw;
+        height: 5rem;
+        background-color: #0099ff;
+        background-color:  rgb(15, 22, 26);;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: fixed;
+    }
+    img{
+        margin: 0rem 1rem;
+        height: 4rem;
+        width: 4rem;
+        vertical-align: middle;
+    }
+    .nav-bar{
+        height: 100%;
+        padding: 0.5rem;
+        display: flex;
+    }
+    .nav-bar a{
+        padding: 0.5rem;
+        margin: auto;
+        margin-right: 1rem;
+        color: white;
+    }
+    .nav-bar a:hover{
+        color: #0099ff;
+    }
+    .nav-bar button{
+        border: none;
+        background-color: transparent;
+        color: white;
+    }
+    .theme-dark-btn{ display: block; }
+    .theme-light-btn{ display: none; }
+    .menu{
+        vertical-align: middle;
+        display: none;
+        margin: auto 1rem;
+        color: white;
+    }
+    @media only screen and (max-width: 600px) {
+        .menu{ display: inline-block;}
+        .logo{ display: none; }
+    }
+</style>
+<style dark>
+    .theme-dark-btn{ display: none; }
+    .theme-light-btn{ display: block; }
+</style>
+<template>
+    <div class="container">
+        <span class="material-symbols-sharp menu" id="header-nijor-menu" on:click="OpenCloseMenu(this)">menu</span>
+        <a n:route="/" class="logo" id="header-nijor-logo"><img src="{Logo}"/></a>
+        <div class="nav-bar" on:route="ChangeRoute(this,$data)">
+            <a n:route="/docs" tab="docs" class="nav-link">Docs</a>
+            <a href="https://github.com/nijorjs" class="nav-link">Github</a>
+            <a n:route="/blog" tab="blog" class="nav-link">Blog</a>
+            <button class="material-symbols-sharp theme-dark-btn" on:click="ChangeTheme()">dark_mode</button>
+            <button class="material-symbols-sharp theme-light-btn" on:click="ChangeTheme()">light_mode</button>
+        </div>
+    </div>
+</template>
+<script>
+    import Logo from 'images/logo.svg';
+
+    function ChangeTheme(){
+        document.body.style.transition = "0.5s";
+        let Theme = window.nijor.getTheme();
+        if(Theme==="auto" || Theme===null) Theme = window.nijor.getColorScheme();
+        if(Theme==="dark") window.nijor.setTheme("light");
+        if(Theme==="light") window.nijor.setTheme("dark");
+    }
+
+    let Route2TabMap = {
+        "/docs":"docs",
+        "/examples":"examples",
+        "/blog":"blog",
+    };
+
+    function ChangeRoute(_this,route){
+        _this.style.display = "flex";
+        _this.querySelectorAll('.nav-link').forEach(element=>{
+            element.style.color = "white";
+            if(element.getAttribute('tab')===Route2TabMap['/'+route.split('/')[1]]){
+                element.style.color = "#07b0ff";
+            }
+        });
+        if(screen.width<600) MobileButtons();
+    }
+
+    function MobileButtons(){
+        if(window.location.pathname!="/docs"){
+            document.getElementById('header-nijor-logo').style.display = "block";
+            document.getElementById('header-nijor-menu').style.display = "none";
+        }else{
+            document.getElementById('header-nijor-logo').style.display = "none";
+            document.getElementById('header-nijor-menu').style.display = "block";
+            document.getElementById('header-nijor-menu').innerHTML = "menu";
+        }
+    }
+
+    function OpenCloseMenu(_this){
+        let sidenav = document.getElementById('docs-sidenav-mobile');
+        if(_this.innerHTML==="menu"){
+            sidenav.style.width = "75%";
+            _this.innerHTML = "close";
+            return;
+        }
+        sidenav.style.width = "0%";
+        _this.innerHTML = "menu";
+    }
+</script>

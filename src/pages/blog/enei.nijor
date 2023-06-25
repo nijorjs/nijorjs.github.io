@@ -1,0 +1,16 @@
+<template specs=[title]>
+    <page fn="{RenderPage(title)}"></page>
+</template>
+<script>
+    let Title2URL = new Map();
+    Title2URL.set('todolist','http://localhost:3500/assets/');
+    async function RenderPage(title){
+        const style = document.createElement('link');
+        style.setAttribute('rel','stylesheet');
+        style.setAttribute('href',Title2URL.get(title)+'style.css');
+        document.head.appendChild(style);
+        let {Page} = await import(Title2URL.get(title)+'modules/App.js');
+        Page.init('page');
+        await Page.run();
+    }
+</script>

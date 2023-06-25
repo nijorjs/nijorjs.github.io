@@ -1,0 +1,3 @@
+<template>
+    <div n:slot></div>
+</template>

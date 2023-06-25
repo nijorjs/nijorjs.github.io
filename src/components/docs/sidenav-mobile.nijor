@@ -1,0 +1,60 @@
+<links n:imported="components/docs/links-index"/>
+<template>
+    <div class="main" id="docs-sidenav-mobile">
+        <a n:route="/" class="branding"><img src="{Logo}"/> Nijor</a>
+        <links></links>
+    </div>
+</template>
+<style>
+    .branding{
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 0.5rem;
+        background-color: rgb(42, 59, 70);
+        color: white;
+        overflow: hidden;
+    }
+    img{
+        margin: 0rem 1rem;
+        height: 4rem;
+        width: 4rem;
+        vertical-align: middle;
+    }
+    .main{
+        width: 75%;
+        height: calc(100vh - 5rem);
+        background-color: rgb(29, 41, 48);
+        overflow: hidden;
+        overflow-y: scroll;
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        z-index: 999;
+        transition: 0.5s;
+    }
+    ul{
+        list-style: none;
+        padding: 0.5rem;
+    }
+    li{ margin: 0.5rem 0.5rem; }
+    li a{
+        padding: 0.5rem;
+        color: rgb(44, 188, 255);
+        color: white;
+    }
+    @media only screen and (max-width: 600px) {
+        .main{ display: flex; width: 0%; }
+    }
+</style>
+<script>
+    import Logo from 'images/logo.svg';
+    function ChangeRoute(_this,route){
+        _this.querySelectorAll('.nav-link-docs').forEach(element=>{
+            element.style.color = "white";
+            if(element.getAttribute('href')===route){
+                element.style.color = "#07b0ff";
+            }
+        });
+    }
+</script>

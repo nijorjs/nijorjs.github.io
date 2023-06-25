@@ -1,0 +1,37 @@
+<links n:imported="components/docs/links-index"/>
+<template>
+    <div class="main" id="docs-sidenav">
+        <links></links>
+    </div>
+</template>
+<style>
+    .main{
+        width: 25%;
+        height: calc(100vh - 5rem);
+        background-color: rgb(29, 41, 48);
+        overflow: hidden;
+    }
+    ul{
+        list-style: none;
+        padding: 0.5rem;
+    }
+    li{ margin: 0.5rem 0.5rem; }
+    li a{
+        padding: 0.5rem;
+        color: rgb(44, 188, 255);
+        color: white;
+    }
+    @media only screen and (max-width: 600px) {
+        .main{ display: none;}
+    }
+</style>
+<script>
+    function ChangeRoute(_this,route){
+        _this.querySelectorAll('.nav-link-docs').forEach(element=>{
+            element.style.color = "white";
+            if(element.getAttribute('href')===route){
+                element.style.color = "#07b0ff";
+            }
+        });
+    }
+</script>

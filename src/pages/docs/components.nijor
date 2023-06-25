@@ -1,0 +1,157 @@
+<section n:imported="components/docs/section"/>
+<highlight n:imported="components/docs/highlight"/>
+<code n:imported="components/docs/codeblock"/>
+<template>
+    <div style="display:none;"><code></code></div>
+    <section title="Components">
+        In Nijor projects, we don't write code in HTML files ; we write code in <highlight>*.nijor</highlight> files instead. Each <highlight>*.nijor</highlight> file is a component in a Nijor Project. <br>
+        A Nijor Component is a capsule of HTML, CSS and Javascript code in a single file in which the HTML, CSS and JS are scoped which allows developers to name their CSS classes and Javascript functions anyway we like without worrying about messing up with the scopes of other components. <br>
+        A Nijor Component can be used as a custom HTML tag (with custom attributes) by other Nijor Component. It can also be used as a Page for routing.
+    </section>
+    <section title="Structure of a Nijor Component">
+        <code>
+            &lt;template&gt;
+                &lt;!-- Your HTML goes here --&gt;
+            &lt;/template&gt;
+            &lt;style&gt;
+                /* Your CSS goes Here */
+            &lt;/style&gt;
+            &lt;script&gt;
+                // Your JS goes here
+            &lt;/script&gt;
+        </code>
+        There are 3 types of script tag in a Nijor component. It is not neccessary to use all of them in a single project.
+        <code>
+            &lt;template specs=\{name}&gt;
+                &lt;p&gt;Hello \{name} !&lt;/p&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+                // Code will get executed before the component Renders. It's code is in the global scope
+                // console.log(name); // Will result in error as this code gets executed before the component even renders.
+                // Variables defined here can be read inside the template tag using \{variable} syntax
+                // Used for defining functions which get executed on events like on:click, on:customevent, onclick, etc
+            &lt;/script&gt;
+            &lt;script mid&gt;
+                /* Very similar to the script tag above but with a slight difference; this script is scoped within the component itself.
+                console.log(name); // Won't result in error as this code gets executed after the component renders.
+                // Variables defined here can be read inside the template tag using \{variable} syntax
+            &lt;/script&gt;
+            &lt;script defer&gt;
+                // Code will get executed after the component Renders.
+                console.log(name); // Won't result in error as this code gets executed after the component renders.
+                // Variables defined here can't be read inside the template tag using \{variable} syntax
+            &lt;/script&gt;
+        </code>
+    </section>
+    <section title="Specs Attribute">
+        <highlight>specs</highlight> is a special attribute available in the <highlight>template</highlight> tag . The specs attribute contains an object of all the custom attributes passed to the component from another component. <highlight>_text_</highlight> is a property in the specs object which returns the <highlight>innerHTML</highlight> of the component when imported by another component.
+        <code>
+            &lt;template specs=\{attr1,attr2}&gt;
+                Attribute1 : \{attr1}&lt;br&gt;
+                Attribute2 : \{attr2}&lt;br&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+                console.log(attr1,attr2);
+            &lt;/script&gt;
+        </code>
+        or
+        <code>
+            &lt;template specs=\attrs&gt;
+                Attribute1 : \{attrs.attr1}&lt;br&gt;
+                Attribute2 : \{attrs.attr2}&lt;br&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+                console.log(attrs.attr1,attrs.attr2);
+            &lt;/script&gt;
+        </code>
+    </section>
+    <section title="Template string">
+        Inside the template tag, you can use the value of a JS variable of the same component inside any HTML tag by enclosing the name of the variable by curly brackets.
+        <code>
+            &lt;template&gt;
+                Hi! my name is \{name}. &lt;br&gt;
+                If you just want to just enclose some text within curly brackets, use \\\(escape-sequence).
+                Example :
+                    \\\{name} will just print \{name} not Arun
+            &lt;/template&gt;
+            &lt;script&gt;
+                let name = "Arun";
+            &lt;/script&gt;
+        </code>
+    </section>
+    <section title="Calling events">
+        In Nijor, instead of calling events like <highlight>onclick</highlight>, <highlight>onload</highlight>, etc we use events like <highlight>on:click</highlight>, <highlight>on:load</highlight>, etc.
+        <code>
+            &lt;template&gt;
+                &lt;input type="number" id="num"&gt;
+                &lt;button on:click="calc()"&gt;Click Me !&lt;/button&gt;
+                &lt;p id="res"&gt;&lt;/p&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+                function Factorial(n)\{
+                    if(n===1 || n===0) return 1;
+                    return n * Factorial(n-1);
+                }
+                function calc()\{
+                    let num = document.getElementById("num").value;
+                    document.getElementById("res").innerHTML = `\$\{num}! = \$\{Facrorial(num)}`;
+                }
+            &lt;/script&gt;
+        </code>
+    </section>
+    <section title="Importing a component">
+        Let's assume that there is a component blogpost.nijor in the <highlight>components/</highlight> directory. We can import it any Nijor file by the following syntax.
+        <code file="pages/blog">
+            &lt;template&gt;
+                &lt;blogpost title="Nijor : A first look"&gt;Nijor is a modern framework for building modern apps .....&lt;/blogpost&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+                import $BlogPost from 'components/blogpost.nijor'; // Import the component
+            &lt;/script&gt;
+            &lt;script defer&gt;
+                $BlogPost.init('blogpost'); // We have to initialize the component by the name which we're using to call it from inside the template tag.
+                $BlogPost.run(); // Calling this function will render the component.
+                /* 
+                In our case, we are calling our component as &lt;blogpost&gt;....&lt;/blogpost&gt;. So we wrote $BlogPost.init('blogpost');
+                Had we call it as &lt;post&gt;....&lt;/post&gt;, we'd have writen $BlogPost.init('post'); instead of $BlogPost.init('blogpost');
+                */
+            &lt;/script&gt;
+        </code>
+        Importing a component seems to be a very tedious task, but luckly for developers, Nijor has a much more beautiful syntax in which you don't need to initilaize and run the component manually.
+        <code file="pages/blog">
+            &lt;blogpost n:imported="components/blogpost"/&gt; &lt;!-- This syntax handles the init and run methods automatically --&gt;
+            &lt;template&gt;
+                &lt;blogpost title="Nijor : A first look"&gt;Nijor is a modern framework for building modern apps .....&lt;/blogpost&gt;
+            &lt;/template&gt;
+        </code>
+    </section>
+    <section title="Example :">
+        <code lang="html" file="src/components/greet.nijor">
+            &lt;template specs=\{name,_text_}&gt;
+                &lt;div&gt;
+                    &lt;h1&gt;Hello \{name}&lt;/h1&gt;
+                    &lt;p&gt;\{_text_}&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/template&gt;
+            &lt;style&gt;
+                div\{
+                    padding : 0.5rem;
+                    background-color : white;
+                }
+                h1\{
+                    color : #0099ff;
+                }
+            &lt;/style&gt;
+        </code>
+        <div style="display:none;"><code></code></div>
+
+        <code lang="html" file="src/App.nijor">
+            &lt;greet n:imported="components/greet.nijor"/&gt;
+            &lt;!--&lt;greet n:imported="components/greet"/&gt; will also work as the file extension .nijor isn't mandatory while importing components. --&gt;
+            &lt;template&gt;
+                &lt;greet name="Tarun"&gt;How are you bro !&lt;/greet&gt;
+                &lt;greet name="Varun"&gt;Long time no see !&lt;/greet&gt;
+            &lt;/template&gt;
+        </code>
+    </section>
+</template>

@@ -1,0 +1,39 @@
+<sidenav n:imported="components/docs/sidenav"/>
+<mobilenav n:imported="components/docs/sidenav-mobile"/>
+<template>
+    <div class="container">
+        <sidenav></sidenav>
+        <mobilenav></mobilenav>
+        <div class="docs-div" n:slot></div>
+    </div>
+</template>
+<style>
+    .container{
+        width: 100%;
+        height: calc(100vh - 5rem);
+        display: flex;
+        flex-direction: row;
+    }
+    .docs-div{
+        padding: 1rem;
+        width: 75%;
+        height: calc(100vh - 5rem);
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .docs-div::-webkit-scrollbar{
+        background-color: rgb(218, 214, 214);
+        width:8px;
+    }
+    .docs-div::-webkit-scrollbar-thumb{
+        background-color: rgb(233, 232, 232);
+        width:8px;
+        height:8px;
+    }
+    .docs-div::-webkit-scrollbar-thumb:hover,.docs-div::-webkit-scrollbar-thumb:active{
+        background-color: #0099ff;
+    }
+    @media only screen and (max-width: 600px) {
+        .docs-div{ width : 100%; }
+    }
+</style>

@@ -1,0 +1,103 @@
+<section n:imported="components/docs/section"/>
+<highlight n:imported="components/docs/highlight"/>
+<code n:imported="components/docs/codeblock"/>
+<template>
+    <section title="Routing"></section>
+    <section title="Introduction">
+        Nijor provides a client-side routing capability that allows the rendering of different user interfaces based on specific routes. Unlike traditional approaches, Nijor's routing mechanism renders routes within the same page, eliminating the need for page refreshes and delivering a seamless user experience.
+    </section>
+    <section title="File-Based Routing">
+        Nijor simplifies the process of rendering pages for different routes by utilizing file-based routing. This means that developers are relieved from the responsibility of manually coding the rendering logic for each route. Instead, Nijor's compiler automatically handles this based on the organization of files in the <highlight>src/pages</highlight> directory of your Nijor project. <br>
+        To illustrate this behavior, let's consider an example. When a user visits the '/' route of our website, the page rendered will be src/pages/index.nijor. Similarly, accessing the '/about' route will trigger the rendering of src/pages/about.nijor. In the event that a route doesn't exist, Nijor will render src/pages/404.nijor. This convenient approach streamlines the development process and improves overall efficiency.
+    </section>
+    <section title="Understanding the App.nijor file">
+        The <highlight>App.nijor</highlight> is a very important file inside the <highlight>src/</highlight> directory of a Nijor project. This page gets rendered before rendering any route in Nijor. Without this page, the Nijor router simply won't work. You can render those components in this page which remain same in all the pages, thus preventing the need for rerendering the common components during navigation through different routes. <br>
+        The App.nijor file must have the <highlight>&lt;div n:slot&gt;&lt;/div&gt;</highlight> in the <highlight>App.nijor</highlight> file. The content from the routes (pages from the src/page/ dir) will be rendered inside this special tag.
+        <code>
+            &lt;template&gt;
+                &lt;div n:slot&gt;
+                    &lt;!--All the pages from the src/pages directory are rendered inside this div (marked with the n:slot attribute). 
+                        Anything outside this div is always rendered irrespective of route.
+                        You can write code for common header or footer outside this div so that it renders in every page, #Reasuablity
+                    --&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Note : Do not add an 'id' attribute to the div with the n:slot attribute. For styling, use 'class' instead. --&gt;
+            &lt;/template&gt;
+        </code>
+    </section>
+    <section title="Boilerplate Code for Routing">
+        In order to use the Nijor Router in your project, your <highlight>src/App.js</highlight> file must contain the following Boilerplate code :
+        <code lang="js">
+            import 'nijor';
+            import 'nijor/router';
+            import App from 'App.nijor';
+
+            //@Routes()
+            
+            App.init('app');
+            App.run();
+            let url = window.location.pathname;
+            window.nijor.renderRoute(url);
+        </code>
+        Note: The <highlight>//@Routes()</highlight> comment is crucial for the Nijor router to function properly. Please ensure that there is no code or comments written on the same line as this comment. <br>
+    </section>
+    <section title="Parameterized Routing">
+        Nijor supports parameterized routes, allowing for variable paths within routes. To define a parameterized route, enclose the parameter(s) using square brackets, e.g., [parameter-name]. You can add any desired text before or after the parameter name. For example: @[user].nijor, [item].nijor, id-[x].nijor, etc.
+        <br><br>
+        Let's explore parameterized routes with an example: <br>
+        Suppose we are building a profile page for users on our site, and we want to render the profile of 'Arun' when accessing the '/@arun' route. Similarly, we want to display the profile of 'Himasri' for the '/@himasri' route, and so on. Instead of creating separate files for each user, such as <highlight>src/pages/@arun</highlight> , <highlight>src/pages/@himasri</highlight>, and thousands of other profiles, we can create a single file, <highlight>src/pages/@[user].nijor</highlight> to handle all user profiles. This way, when a user visits routes like '/@himasri' or '/@arun', they will be directed to the same page, <highlight>src/pages/@[user].nijor</highlight>. <br>
+        <code file="src/pages/@[user]">
+            &lt;template specs=[user]&gt; &lt;!-- Receiving the parameterised route by array destructuring in specs --&gt;
+                &lt;div&gt;
+                    &lt;h1&gt;Hi \{user}&lt;/h1&gt; 
+                    &lt;!-- 
+                        If the user visits /@arun &lt;h1&gt;Hi \{user}&lt;/h1&gt; will become &lt;h1&gt;Hi arun&lt;/h1&gt; 
+                        If the user visits /@himasri &lt;h1&gt;Hi \{user}&lt;/h1&gt; will become &lt;h1&gt;Hi himasri&lt;/h1&gt; 
+                    --&gt;
+                &lt;/div&gt;
+            &lt;/template&gt;
+        </code>
+    </section>
+    <section title="Sub Routes within a route">
+        By sub routes, we mean routing within a parent route. <br>
+        For instance, there is a route say, <highlight>/blog</highlight> which has some sub-routes like <highlight>/blog/What-is-Nijor</highlight>, <highlight>/blog/Learning-Nijor</highlight>, etc and each of these pages have a lot of common components and common layout in general. So, you don't want to copy-paste the same common code for these pages. In these scenarios, sub-routes can be very useful. You can also have parameterized routes as subroutes within a route. <br><br>
+        
+        In order to create a sub route within a route : <br>
+        (1) Create a folder, say 'blog' inside the src/pages directory. <br>
+        (2) Create the <highlight>.nijor</highlight> file within it. (write .nijor the way you write .gitignore).<br>
+        (3) Create <highlight>index.nijor</highlight> file within the folder.<br>
+        (4) Create <highlight>What-is-Nijor.nijor</highlight> file within the folder.<br><br>
+        
+        Now, write all the common components in the <highlight>.nijor</highlight> file. This file contains all the common code/components for the '/blog' route. Whenever somebody visits '/blog/*', this page will get rendered.
+        <code file="src/pages/blog/.nijor">
+            &lt;sidenav n:imported="components/sidenav"/&gt;
+            &lt;template&gt;
+                &lt;sidenav&gt;&lt;/sidenav&gt;
+                &lt;div n:slot&gt;
+                    &lt;!--All the subroutes will be rendered inside this folder.
+                    Anything outside it will be rendered for any sub-route within '/blog' route--&gt;
+                &lt;/div&gt;
+            &lt;/template&gt;
+        </code>
+
+        <code file="src/pages/blog/index.nijor">
+            &lt;template&gt;
+                &lt;div&gt;
+                    This is the Index page.
+                    Whenever somebody visits '/blog/' or just '/blog' , this page will be rendered.
+                &lt;/div&gt;
+            &lt;/template&gt;
+        </code>
+
+        <code file="src/pages/blog/What-is-Nijor.nijor">
+            &lt;template&gt;
+                &lt;div&gt;
+                    This is the What-is-Nijor page.
+                    Whenever somebody visits '/blog/What-is-Nijor', this page will be rendered.
+                &lt;/div&gt;
+            &lt;/template&gt;
+        </code>
+
+    </section>
+</template>

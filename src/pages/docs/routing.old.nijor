@@ -1,0 +1,105 @@
+<section n:imported="components/docs/section"/>
+<highlight n:imported="components/docs/highlight"/>
+<code n:imported="components/docs/codeblock"/>
+<template>
+    <section title="Routing"></section>
+    <section title="Introduction">
+        In Nijor, we can do client-side routing. What it means is that we can render different UI to the user for different routes. The routes will be rendered in the same page due to which the page won't refresh on navigating to another route. This leads to a smoother user experience. <br>
+
+        Here's an example of a simple router in Nijor :
+        <code lang="js" file="src/App.js">
+            import 'nijor';
+            import Router from 'nijor/router'; // Importing the Nijor Router
+            import App from 'App.nijor'; // Importing the App.nijor page
+            import Home from 'pages/index.nijor'; // Importing the home.nijor page
+            import About from 'pages/about.nijor'; // Importing the about.nijor page
+            import Error404 from 'pages/404.nijor'; // Importing the 404error.nijor page
+
+
+            /* Initializing the Router. The '#n-route' is the reference to the div
+            where the content from the pages (Home.nijor and About.nijor) has to be rendered. */
+
+            const router = new Router('#n-routes');
+            router.route('/',Home); // Defining the Routes.
+            router.route('/about',About); // Defining the Routes.
+            router.route('*',Error404); // '*' route is rendered in case of undefined routes ; can be used for showing a 404 Error page.
+            router.render(App); // Rendering the App.nijor file.
+        </code>
+        <code file="src/App.nijor">
+            &lt;header n:imported="components/header"/&gt;
+            &lt;template&gt;
+            &lt;header&gt;&lt;/header&gt; &lt;!-- The header component won't get affected on route change --&gt;
+                &lt;div id="n-routes"&gt;
+                    &lt;!-- All the routes will be rendered inside this div --&gt;
+                    &lt;!-- Content outside this div won't get affected on change in route --&gt;
+                &lt;/div&gt;
+            &lt;/template&gt;
+        </code>
+        
+    </section>
+    <section title="Parameterized Routing">
+        With parameterised routes we can have variable paths in our routes. Let's understand it with the help of an example :  
+        <code lang="js" file="src/App.js">
+            import 'nijor';
+            import Router from 'nijor/router';
+            import App from 'App.nijor';
+            import Home from 'pages/index.nijor';
+            import BlogIndex from 'pages/blog/index.nijor';
+            import Blog from 'pages/blog/blog.nijor';
+            import Error404 from 'pages/404.nijor';
+            const router = new Router('#n-routes');
+            router.route('/',Home);
+            router.route('/blog',BlogIndex);
+            router.route('/blog/&lt;title&gt;',Blog); // Defining the paramtereized Route.
+            router.route('*',Error404); // '*' route is rendered in case of undefined routes ; can be used for showing a 404 Error page.
+            router.render(App); // Rendering the App.nijor file.
+        </code>
+        <code file="src/pages/blog/index.nijor">
+            &lt;!-- This page will get rendered whenever the user visits the /blog route --&gt;
+            &lt;template&gt;
+                &lt;div&gt;
+                    &lt;h1&gt;Search for BlogPosts ....&lt;/h1&gt;
+                &lt;/div&gt;
+            &lt;/template&gt;
+        </code>
+        <code file="src/pages/blog/blog.nijor">
+            &lt;template specs=[title]&gt; &lt;!-- Receiving the parameterised route by array destructuring in specs --&gt;
+                &lt;div&gt;
+                    &lt;h1&gt;\{title}&lt;/h1&gt;
+                    &lt;!-- 
+                        If the user visits /blog/What-is-Nijor, &lt;h1&gt;\{title}&lt;/h1&gt; will become &lt;h1&gt;What-is-Nijor&lt;/h1&gt;
+                        If the user visits /blog/XYX, &lt;h1&gt;\{title}&lt;/h1&gt; will become &lt;h1&gt;XYX&lt;/h1&gt;
+                    --&gt;
+                &lt;/div&gt;
+            &lt;/template&gt;
+        </code>
+    </section>
+    <section title="preRender method">
+        <code lang="js">
+            import 'nijor';
+            import Router from 'nijor/router';
+            const router = new Router('#n-routes');
+
+            router.preRender(()=>DoSomething());
+            // function passed to the preRender function runs before every page is rendered on route change.
+            // router.preRender((urlParameter)=>DoSomething(urlParameter)); The urlParameter contains the url paramters of a parameterized route.
+        </code>
+    </section>
+    <section title="postRender method">
+        <code lang="js">
+            import 'nijor';
+            import Router from 'nijor/router';
+            const router = new Router('#n-routes');
+
+            function DoSomething()\{
+                window.nijor.emitEvent('routechange');
+                // Fire the routechange event.
+                // Whenever someone navigates to another route, the 'routechange' custom event will get fired.
+            }
+
+            router.postRender(()=>DoSomething());
+            // function passed to the preRender function runs after every page is rendered on route change.
+            // router.postRender((urlParameter)=>DoSomething(urlParameter)); The urlParameter contains the url paramters of a parameterized route.
+        </code>
+    </section>
+</template>
