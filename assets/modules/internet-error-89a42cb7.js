@@ -1,0 +1,1 @@
+var n=new window.nijor.component((async function(){return'<div n-scope="AidMMwFb6cv40woK">\n        <h1 n-scope="AidMMwFb6cv40woK">Network Error !</h1>\n        <p n-scope="AidMMwFb6cv40woK">It seems that you aren\'t connected to the internet, kindly check your net connection.</p>\n    </div>\n'}),(async function(){}));export{n as default};

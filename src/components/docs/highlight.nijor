@@ -4,6 +4,10 @@
 <script>
     function Route(link){
         if(link!="nolink"){
+            if(link.startsWith("https://")){
+                window.open(link);
+                return;
+            }
             window.nijor.redirect(link);
             window.nijor.emitEvent('navigate');
         }

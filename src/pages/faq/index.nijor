@@ -1,0 +1,26 @@
+<section n:imported="components/docs/section"/>
+<highlight n:imported="components/docs/highlight"/>
+<template>
+    <div class="container">
+        <section title="Namaskar 🙏">
+        Hi ! I'm Debarshi Pathak (alias <highlight link="https://twitter.com/DebAxom">DebAxom</highlight>), the creator of Nijor. <br>
+        I am the Assamese teenager who created Nijor in 2020 at the age of 14 (was about to turn 15). <br><br>
+
+        I created Nijor because I didn't want to learn React or Angular as I felt that learning those frameworks is like kinda learning a new language completely. So I decided to create my own framework, Nijor. <br>
+        The word <highlight>Nijor (নিজৰ)</highlight> means "My" or "Mine" in the Assamese language. I chose the word "Nijor" for my framework because I could create "my own" custom HTML tags with attributes. I've been using NijorJS since 2020 and I decided to write the <highlight link="/docs">docs</highlight> in 2023. <br><br>
+        
+        Nijor has been inspired by Vue and Svelte and it's influence can be felt. The idea of <highlight>*.nijor</highlight> files came from <highlight>*.vue</highlight> files and the idea of a compiler came from Svelte. I even tried to take some inspiration from their source code, but I couldn't understand their code. So, I had to implement all the features of this framework from scratch (I did steal some code from StalkOverflow though 😁). <br><br>
+
+        My core philosophy behind Nijor is simplicity : The framework should have a very flat learning curve. Due to this philosophy, <highlight>*.nijor</highlight> files are more closely related to <highlight>*.html</highlight> files than <highlight>*.js</highlight> files as it's easier to write JS inside HTML rather than the other way round. <br><br>
+        
+        Nijor is not a perfect framework ; just like everything in this world, Nijor too has it's flaws and it might be confusing at times. <br><br>
+        
+        At last, I'd like to thank the Svelte creator Rich-Harris for creating Rollup JS as without Rollup it'd have been impossible for me to create the Nijor compiler.
+        </section>
+    </div>
+</template>
+<style>
+    .container{
+        padding: 0.5rem;
+    }
+</style>

@@ -1,0 +1,30 @@
+<template>
+    <ul on:navigate="ChangeRoute(this)" on:route="ChangeRoute(this,$data)">
+        <li><a class="nav-link-faq" n:route="/faq">A Note from the Creator</a></li>
+        <li><a class="nav-link-faq" n:route="/faq/How-Nijor-Works">How Nijor Works ?</a></li>
+        <li><a class="nav-link-faq" n:route="/faq/virtual-dom">Does Nijor have a Virtial DOM ?</a></li>
+        <li><a class="nav-link-faq" n:route="/faq/How-Scoped-CSS-Works">How Scoped CSS Work ?</a></li>        
+    </ul>
+</template>
+<style>
+    ul{
+        list-style: none;
+        padding: 0.5rem;
+    }
+    li{ margin: 0.5rem 0.5rem; }
+    li a{
+        padding: 0.5rem;
+        color: rgb(44, 188, 255);
+        color: white;
+    }
+</style>
+<script>
+    function ChangeRoute(_this,route){
+        _this.querySelectorAll('.nav-link-faq').forEach(element=>{
+            element.style.color = "white";
+            if(element.getAttribute('href')===route){
+                element.style.color = "#07b0ff";
+            }
+        });
+    }
+</script>

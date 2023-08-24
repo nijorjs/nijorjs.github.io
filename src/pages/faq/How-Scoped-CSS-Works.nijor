@@ -1,0 +1,50 @@
+<section n:imported="components/docs/section"/>
+<highlight n:imported="components/docs/highlight"/>
+<code n:imported="components/docs/codeblock"/ lazy>
+<template>
+    <div class="container">
+        <section title="How Scoped CSS Works ?">
+            The CSS code you write inside a component is scoped.
+            While compiling <highlight>.nijor</highlight> files, the compiler adds the attribute "n-scope" to each and every HTML element inside the template tag and also modifies the CSS code inside the style tag such that the styles only apply to the elements of that particular component. The value of the 'n-scope' attribute is same for all the HTML elements inside a particular Nijor component. <br>
+            
+            For example :
+
+            <code>
+                &lt;template&gt;
+                    &lt;div&gt;
+                        &lt;h1&gt;Hello World&lt;/h1&gt;
+                    &lt;/div&gt;
+                &lt;/template&gt;
+                &lt;style&gt;
+                    div\{
+                       dispaly : flex; 
+                    }
+                    h1\{
+                        color : #0066f6;
+                     }
+                &lt;/style&gt;
+            </code>
+            The above code becomes somewhat like the code below.
+            <code>
+                &lt;template&gt;
+                    &lt;div n-scope="nsjiue73j"&gt;
+                        &lt;h1 n-scope="nsjiue73j"&gt;Hello World&lt;/h1&gt;
+                    &lt;/div&gt;
+                &lt;/template&gt;
+                &lt;style&gt;
+                    div[n-scope="nsjiue73j"]\{
+                       dispaly : flex; 
+                    }
+                    h1[n-scope="nsjiue73j"]\{
+                        color : #0066f6;
+                     }
+                &lt;/style&gt;
+            </code>
+        </section>
+    </div>
+</template>
+<style>
+    .container{
+        padding: 0.5rem;
+    }
+</style>

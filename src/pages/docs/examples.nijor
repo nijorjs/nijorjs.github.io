@@ -3,7 +3,6 @@
 <template>
     <section title="Example Nijor Apps :">
         you can refer to the following examples to learn Nijor in a better way. <br><br>
-        <highlight link="https://github.com/nijorjs/todolist-example">To Do List App</highlight> <br><br>
         <highlight link="https://github.com/nijorjs/notesapp-example">Notes App</highlight>
     </section>
 </template>

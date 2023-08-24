@@ -19,7 +19,7 @@
         This directory stores all the Nijor components which are to be used as <highlight>pages</highlight> during routing. Pages are just normal Nijor components which are used for routing, they behave normally as other Nijor components.
     </section>
     <section title="src/styles directory">
-        This directory stores our stylesheets.
+        This directory stores our global stylesheets.
     </section>
     <section title="src/images directory">
         This directory stores our images which can be imported into a Nijor component just like a Javascript file using ES6 imports.

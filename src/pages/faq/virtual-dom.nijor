@@ -1,0 +1,15 @@
+<section n:imported="components/docs/section"/>
+<highlight n:imported="components/docs/highlight"/>
+<template>
+    <div class="container">
+        <section title="Does Nijor have a Virtial DOM ?">
+            No, Nijor doesn't have any Virtual DOM as it's simply overrated ! At the end of the day, the Virtual DOM also communicated with the real DOM. So, I don't really understand how can it be faster than the real DOM ? <br>
+            Nijor uses very savage rendering techniques ; it doesn't even create the HTML elements using JS code, it just dumps the code you wrote inside a Nijor JS file directly into the parent contaier using the <highlight>.innerHTML</highlight> method.
+        </section>
+    </div>
+</template>
+<style>
+    .container{
+        padding: 0.5rem;
+    }
+</style>

@@ -1,0 +1,15 @@
+<section n:imported="components/docs/section"/>
+<highlight n:imported="components/docs/highlight"/>
+<template>
+    <div class="container">
+        <section title="How Nijor Works ?">
+            Many of you might have thought that how Nijor compiler actually works behind the scene ? Well, in this article I'd tell you exactly that ! <br>
+            The Nijor compiler uses <highlight link="https://rollupjs.org">RollupJS</highlight> with <highlight link="https://github.com/nijorjs/nijor-rollup-plugin">this plugin</highlight> to first compile the <highlight>*.nijor</highlight> code to <highlight>*.js</highlight> code and bundle the components into the pages. All the functional attributes get compiled to normal js code. 
+        </section>
+    </div>
+</template>
+<style>
+    .container{
+        padding: 0.5rem;
+    }
+</style>

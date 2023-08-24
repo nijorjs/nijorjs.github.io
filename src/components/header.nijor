@@ -59,7 +59,7 @@
         <div class="nav-bar" on:route="ChangeRoute(this,$data)">
             <a n:route="/docs" tab="docs" class="nav-link">Docs</a>
             <a href="https://github.com/nijorjs" class="nav-link">Github</a>
-            <a n:route="/blog" tab="blog" class="nav-link">Blog</a>
+            <a n:route="/faq" tab="faq" class="nav-link">FAQ</a>
             <button class="material-symbols-sharp theme-dark-btn" on:click="ChangeTheme()">dark_mode</button>
             <button class="material-symbols-sharp theme-light-btn" on:click="ChangeTheme()">light_mode</button>
         </div>
@@ -79,7 +79,7 @@
     let Route2TabMap = {
         "/docs":"docs",
         "/examples":"examples",
-        "/blog":"blog",
+        "/faq":"faq",
     };
 
     function ChangeRoute(_this,route){
