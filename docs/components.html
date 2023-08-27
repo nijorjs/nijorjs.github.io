@@ -1,0 +1,297 @@
+<!DOCTYPE html><html><head>
+    <title>Nijor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css" media="print" onload="this.media='all'">
+    <link rel="icon" href="/assets/favicon.ico">
+    <script src="/assets/highlight.js" async="" defer=""></script>
+    <script src="/assets/modules/app.js" type="module" async="" defer="" onload="window.nijor.AutoTheme()"></script>
+    <link rel="stylesheet" href="/assets/highlight.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" media="print" onload="this.media='all'">
+    <meta name="keywords" content="Nijor, NijorJS, Web Framework, Web Development, Javascript Framework, Assamese Javascript Framework">
+    <meta name="description" content="Nijor is a modern frontend web development framework which helps you create websites with ease !">
+</head>
+<body>
+    <noscript>Please enable Javascript to view this site properly.</noscript>
+    <div class="container" n-scope="LDNTGAG1O">
+        <span class="material-symbols-sharp menu" id="header-nijor-menu" n-scope="LDNTGAG1O" onclick="window.nijorfunc._igOpenCloseMenu(this)" style="display: none;">menu</span>
+        <a class="logo" id="header-nijor-logo" n-scope="LDNTGAG1O" onclick="return window.nijor.redirect(this.href)" href="/" style="display: block;"><img src="data:image/svg+xml,%3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 20010904//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'%3e%3csvg version='1.0' xmlns='http://www.w3.org/2000/svg' width='150px' height='150px' viewBox='0 0 1500 1500' preserveAspectRatio='xMidYMid meet'%3e%3cg id='layer101' fill='%2300a2e8' stroke='none'%3e %3cpath d='M150 1397 c0 -8 -5 -17 -11 -19 -7 -2 21 -200 80 -567 50 -310 91 -568 91 -572 0 -5 6 -9 12 -9 7 0 178 165 380 367 l368 368 1 -360 1 -360 99 -94 c55 -52 102 -91 105 -88 10 10 -157 1131 -169 1139 -7 4 -16 8 -22 8 -5 0 -175 -165 -377 -367 l-368 -368 -1 380 -1 380 -94 89 c-54 51 -94 82 -94 73z'/%3e %3c/g%3e%3cg id='layer102' fill='%230ec4f8' stroke='none'%3e %3cpath d='M703 838 l-363 -363 0 -120 0 -120 365 365 366 366 -3 117 -3 117 -362 -362z'/%3e %3c/g%3e%3c/svg%3e" n-scope="LDNTGAG1O"></a>
+        <div class="nav-bar" n-scope="LDNTGAG1O" onroute="window.nijorfunc._igChangeRoute(this,$data)" id="id_MKQgiw" style="display: flex;">
+            <a tab="docs" class="nav-link" n-scope="LDNTGAG1O" onclick="return window.nijor.redirect(this.href)" href="/docs" style="color: rgb(7, 176, 255);">Docs</a>
+            <a href="https://github.com/nijorjs" class="nav-link" n-scope="LDNTGAG1O" style="color: white;">Github</a>
+            <a tab="faq" class="nav-link" n-scope="LDNTGAG1O" onclick="return window.nijor.redirect(this.href)" href="/faq" style="color: white;">FAQ</a>
+            <button class="material-symbols-sharp theme-dark-btn" n-scope="LDNTGAG1O" onclick="window.nijorfunc._igChangeTheme()">dark_mode</button>
+            <button class="material-symbols-sharp theme-light-btn" n-scope="LDNTGAG1O" onclick="window.nijorfunc._igChangeTheme()">light_mode</button>
+        </div>
+    </div>
+
+    <div style="margin-top: 5rem;" id="routes-slot-/" n-scope="KOJDoi28I8RO1YJ"><div class="container" n-scope="clhB1mtIxnfAa">
+        <div class="main" id="docs-sidenav" n-scope="12UCKP1UN">
+        <ul n-scope="Rb8cEokbzq96" onnavigate="window.nijorfunc._etChangeRoute(this)" onroute="window.nijorfunc._etChangeRoute(this,$data)" id="id_mKMyy">
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs" style="color: white;">Introduction</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/installation" style="color: white;">Installation</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/nijor-cli" style="color: white;">Nijor-CLI</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/structure" style="color: white;">Project Structure</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/components" style="color: rgb(7, 176, 255);">Components</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/routing" style="color: white;">Routing</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/custom-events" style="color: white;">Custom Events</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/functional-attributes" style="color: white;">Functional Attributes</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/reactivity" style="color: white;">Reactivity</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/code-splitting" style="color: white;">Code Splitting</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/dark-mode" style="color: white;">Dark Mode</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/examples" style="color: white;">Examples</a></li>
+    </ul>
+
+    </div>
+
+        <div class="main" id="docs-sidenav-mobile" n-scope="UDRWNZ8UL3d15S">
+        <a class="branding" n-scope="UDRWNZ8UL3d15S" onclick="return window.nijor.redirect(this.href)" href="/"><img src="data:image/svg+xml,%3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 20010904//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'%3e%3csvg version='1.0' xmlns='http://www.w3.org/2000/svg' width='150px' height='150px' viewBox='0 0 1500 1500' preserveAspectRatio='xMidYMid meet'%3e%3cg id='layer101' fill='%2300a2e8' stroke='none'%3e %3cpath d='M150 1397 c0 -8 -5 -17 -11 -19 -7 -2 21 -200 80 -567 50 -310 91 -568 91 -572 0 -5 6 -9 12 -9 7 0 178 165 380 367 l368 368 1 -360 1 -360 99 -94 c55 -52 102 -91 105 -88 10 10 -157 1131 -169 1139 -7 4 -16 8 -22 8 -5 0 -175 -165 -377 -367 l-368 -368 -1 380 -1 380 -94 89 c-54 51 -94 82 -94 73z'/%3e %3c/g%3e%3cg id='layer102' fill='%230ec4f8' stroke='none'%3e %3cpath d='M703 838 l-363 -363 0 -120 0 -120 365 365 366 366 -3 117 -3 117 -362 -362z'/%3e %3c/g%3e%3c/svg%3e" n-scope="UDRWNZ8UL3d15S"> Nijor</a>
+        <ul n-scope="Rb8cEokbzq96" onnavigate="window.nijorfunc._etChangeRoute(this)" onroute="window.nijorfunc._etChangeRoute(this,$data)" id="id_YNWRa">
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs" style="color: white;">Introduction</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/installation" style="color: white;">Installation</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/nijor-cli" style="color: white;">Nijor-CLI</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/structure" style="color: white;">Project Structure</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/components" style="color: rgb(7, 176, 255);">Components</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/routing" style="color: white;">Routing</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/custom-events" style="color: white;">Custom Events</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/functional-attributes" style="color: white;">Functional Attributes</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/reactivity" style="color: white;">Reactivity</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/code-splitting" style="color: white;">Code Splitting</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/dark-mode" style="color: white;">Dark Mode</a></li>
+        <li n-scope="Rb8cEokbzq96"><a class="nav-link-docs" n-scope="Rb8cEokbzq96" onclick="return window.nijor.redirect(this.href)" href="/docs/examples" style="color: white;">Examples</a></li>
+    </ul>
+
+    </div>
+
+        <div class="docs-div" id="routes-slot-/docs" n-scope="clhB1mtIxnfAa"><div style="display:none;" n-scope="uyHuC1pipBxgMt"><pre n-scope="5iyssh">        <code class="language-html" n-scope="5iyssh"></code>
+    </pre>
+</div>
+    <div class="section" n-scope="tNrO1JIVgwgSLDayofOl">
+        <h1 n-scope="tNrO1JIVgwgSLDayofOl">Components</h1>
+        <p n-scope="tNrO1JIVgwgSLDayofOl">
+        In Nijor projects, we don't write code in HTML files ; we write code in <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">*.nijor</span>
+ files instead. Each <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">*.nijor</span>
+ file is a component in a Nijor Project. <br n-scope="uyHuC1pipBxgMt">
+        A Nijor Component is a capsule of HTML, CSS and Javascript code in a single file in which the HTML, CSS and JS are scoped which allows developers to name their CSS classes and Javascript functions anyway we like without worrying about messing up with the scopes of other components. <br n-scope="uyHuC1pipBxgMt">
+        A Nijor Component can be used as a custom HTML tag (with custom attributes) by other Nijor Component. It can also be used as a Page for routing.
+    </p>
+        <div class="border" n-scope="tNrO1JIVgwgSLDayofOl"></div>
+    </div>
+
+    <div class="section" n-scope="tNrO1JIVgwgSLDayofOl">
+        <h1 n-scope="tNrO1JIVgwgSLDayofOl">Structure of a Nijor Component</h1>
+        <p n-scope="tNrO1JIVgwgSLDayofOl">
+        </p><pre n-scope="5iyssh">        <code class="language-html" n-scope="5iyssh"></code>
+    </pre>
+
+            &lt;template&gt;
+                &lt;!-- Your HTML goes here --&gt;
+            &lt;/template&gt;
+            &lt;style&gt;
+                /* Your CSS goes Here */
+            &lt;/style&gt;
+            &lt;script&gt;
+                // Your JS goes here
+            &lt;/script&gt;
+        
+        There are 3 types of script tag in a Nijor component. It is not neccessary to use all of them in a single project.
+        <pre n-scope="5iyssh">        <code class="language-html" n-scope="5iyssh">
+            &lt;template specs={name}&gt;
+                &lt;p&gt;Hello {name} !&lt;/p&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+                // Code will get executed before the component Renders. It's code is in the global scope
+                // console.log(name); // Will result in error as this code gets executed before the component even renders.
+                // Variables defined here can be read inside the template tag using {variable} syntax
+                // Used for defining functions which get executed on events like on:click, on:customevent, onclick, etc
+            &lt;/script&gt;
+            &lt;script mid&gt;
+                /* Very similar to the script tag above but with a slight difference; this script is scoped within the component itself.
+                console.log(name); // Won't result in error as this code gets executed after the component renders.
+                // Variables defined here can be read inside the template tag using {variable} syntax
+            &lt;/script&gt;
+            &lt;script defer&gt;
+                // Code will get executed after the component Renders.
+                console.log(name); // Won't result in error as this code gets executed after the component renders.
+                // Variables defined here can't be read inside the template tag using {variable} syntax
+            &lt;/script&gt;
+        </code>
+    </pre>
+
+    <p></p>
+        <div class="border" n-scope="tNrO1JIVgwgSLDayofOl"></div>
+    </div>
+
+    <div class="section" n-scope="tNrO1JIVgwgSLDayofOl">
+        <h1 n-scope="tNrO1JIVgwgSLDayofOl">Specs Attribute</h1>
+        <p n-scope="tNrO1JIVgwgSLDayofOl">
+        <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">specs</span>
+ is a special attribute available in the <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">template</span>
+ tag . The specs attribute contains an object of all the custom attributes passed to the component from another component. <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">_text_</span>
+ is a property in the specs object which returns the <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">innerHTML</span>
+ of the component when imported by another component.
+        </p><pre n-scope="5iyssh">        <code class="language-html" n-scope="5iyssh">
+            &lt;template specs={name}&gt;
+                &lt;p&gt;Hello {name} !&lt;/p&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+                // Code will get executed before the component Renders. It's code is in the global scope
+                // console.log(name); // Will result in error as this code gets executed before the component even renders.
+                // Variables defined here can be read inside the template tag using {variable} syntax
+                // Used for defining functions which get executed on events like on:click, on:customevent, onclick, etc
+            &lt;/script&gt;
+            &lt;script mid&gt;
+                /* Very similar to the script tag above but with a slight difference; this script is scoped within the component itself.
+                console.log(name); // Won't result in error as this code gets executed after the component renders.
+                // Variables defined here can be read inside the template tag using {variable} syntax
+            &lt;/script&gt;
+            &lt;script defer&gt;
+                // Code will get executed after the component Renders.
+                console.log(name); // Won't result in error as this code gets executed after the component renders.
+                // Variables defined here can't be read inside the template tag using {variable} syntax
+            &lt;/script&gt;
+        </code>
+    </pre>
+
+            &lt;template specs={attr1,attr2}&gt;
+                Attribute1 : {attr1}&lt;br&gt;
+                Attribute2 : {attr2}&lt;br&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+                console.log(attr1,attr2);
+            &lt;/script&gt;
+        
+        or
+        <codeprcma n-scope="uyHuC1pipBxgMt">
+            &lt;template specs=attrs&gt;
+                Attribute1 : {attrs.attr1}&lt;br&gt;
+                Attribute2 : {attrs.attr2}&lt;br&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+                console.log(attrs.attr1,attrs.attr2);
+            &lt;/script&gt;
+        </codeprcma>
+    <p></p>
+        <div class="border" n-scope="tNrO1JIVgwgSLDayofOl"></div>
+    </div>
+
+    <div class="section" n-scope="tNrO1JIVgwgSLDayofOl">
+        <h1 n-scope="tNrO1JIVgwgSLDayofOl">Template string</h1>
+        <p n-scope="tNrO1JIVgwgSLDayofOl">
+        Inside the template tag, you can use the value of a JS variable of the same component inside any HTML tag by enclosing the name of the variable by curly brackets.
+        <codeprcma n-scope="uyHuC1pipBxgMt">
+            &lt;template&gt;
+                Hi! my name is {name}. &lt;br&gt;
+                If you just want to just enclose some text within curly brackets, use \(escape-sequence).
+                Example :
+                    \{name} will just print {name} not Arun
+            &lt;/template&gt;
+            &lt;script&gt;
+                let name = "Arun";
+            &lt;/script&gt;
+        </codeprcma>
+    </p>
+        <div class="border" n-scope="tNrO1JIVgwgSLDayofOl"></div>
+    </div>
+
+    <div class="section" n-scope="tNrO1JIVgwgSLDayofOl">
+        <h1 n-scope="tNrO1JIVgwgSLDayofOl">Calling events</h1>
+        <p n-scope="tNrO1JIVgwgSLDayofOl">
+        In Nijor, instead of calling events like <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">onclick</span>
+, <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">onload</span>
+, etc we use events like <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">on:click</span>
+, <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">on:load</span>
+, etc.
+        <codeprcma n-scope="uyHuC1pipBxgMt">
+            &lt;template&gt;
+                &lt;input type="number" id="num"&gt;
+                &lt;button on:click="calc()"&gt;Click Me !&lt;/button&gt;
+                &lt;p id="res"&gt;&lt;/p&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+                function Factorial(n){
+                    if(n===1 || n===0) return 1;
+                    return n * Factorial(n-1);
+                }
+                function calc(){
+                    let num = document.getElementById("num").value;
+                    document.getElementById("res").innerHTML = `${num}! = ${Facrorial(num)}`;
+                }
+            &lt;/script&gt;
+        </codeprcma>
+    </p>
+        <div class="border" n-scope="tNrO1JIVgwgSLDayofOl"></div>
+    </div>
+
+    <div class="section" n-scope="tNrO1JIVgwgSLDayofOl">
+        <h1 n-scope="tNrO1JIVgwgSLDayofOl">Importing a component</h1>
+        <p n-scope="tNrO1JIVgwgSLDayofOl">
+        Let's assume that there is a component blogpost.nijor in the <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">components/</span>
+ directory. We can import it any Nijor file by the following syntax.
+        <codeprcma file="pages/blog" n-scope="uyHuC1pipBxgMt">
+            &lt;template&gt;
+                &lt;blogpost title="Nijor : A first look"&gt;Nijor is a modern framework for building modern apps .....&lt;/blogpost&gt;
+            &lt;/template&gt;
+            &lt;script&gt;
+                import $BlogPost from 'components/blogpost.nijor'; // Import the component
+            &lt;/script&gt;
+            &lt;script defer&gt;
+                $BlogPost.init('blogpost'); // We have to initialize the component by the name which we're using to call it from inside the template tag.
+                $BlogPost.run(); // Calling this function will render the component.
+                /* 
+                In our case, we are calling our component as &lt;blogpost&gt;....&lt;/blogpost&gt;. So we wrote $BlogPost.init('blogpost');
+                Had we call it as &lt;post&gt;....&lt;/post&gt;, we'd have writen $BlogPost.init('post'); instead of $BlogPost.init('blogpost');
+                */
+            &lt;/script&gt;
+        </codeprcma>
+        Importing a component seems to be a very tedious task, but luckly for developers, Nijor has a much more beautiful syntax in which you don't need to initilaize and run the component manually.
+        <codeprcma file="pages/blog" n-scope="uyHuC1pipBxgMt">
+            &lt;blogpost n:imported="components/blogpost"/&gt; &lt;!-- This syntax handles the init and run methods automatically --&gt;
+            &lt;template&gt;
+                &lt;blogpost title="Nijor : A first look"&gt;Nijor is a modern framework for building modern apps .....&lt;/blogpost&gt;
+            &lt;/template&gt;
+        </codeprcma>
+    </p>
+        <div class="border" n-scope="tNrO1JIVgwgSLDayofOl"></div>
+    </div>
+
+    <div class="section" n-scope="tNrO1JIVgwgSLDayofOl">
+        <h1 n-scope="tNrO1JIVgwgSLDayofOl">Example :</h1>
+        <p n-scope="tNrO1JIVgwgSLDayofOl">
+        <codeprcma lang="html" file="src/components/greet.nijor" n-scope="uyHuC1pipBxgMt">
+            &lt;template specs={name,_text_}&gt;
+                &lt;div&gt;
+                    &lt;h1&gt;Hello {name}&lt;/h1&gt;
+                    &lt;p&gt;{_text_}&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/template&gt;
+            &lt;style&gt;
+                div{
+                    padding : 0.5rem;
+                    background-color : white;
+                }
+                h1{
+                    color : #0099ff;
+                }
+            &lt;/style&gt;
+        </codeprcma>
+        </p><div style="display:none;" n-scope="uyHuC1pipBxgMt"><codeprcma n-scope="uyHuC1pipBxgMt"></codeprcma></div>
+
+        <codeprcma lang="html" file="src/App.nijor" n-scope="uyHuC1pipBxgMt">
+            &lt;greet n:imported="components/greet.nijor"/&gt;
+            &lt;!--&lt;greet n:imported="components/greet"/&gt; will also work as the file extension .nijor isn't mandatory while importing components. --&gt;
+            &lt;template&gt;
+                &lt;greet name="Tarun"&gt;How are you bro !&lt;/greet&gt;
+                &lt;greet name="Varun"&gt;Long time no see !&lt;/greet&gt;
+            &lt;/template&gt;
+        </codeprcma>
+    <p></p>
+        <div class="border" n-scope="tNrO1JIVgwgSLDayofOl"></div>
+    </div>
+
+</div>
+    </div>
+</div>
+
+
+</body></html>

@@ -16,20 +16,42 @@
     <div class="container" n-scope="LDNTGAG1O">
         <span class="material-symbols-sharp menu" id="header-nijor-menu" n-scope="LDNTGAG1O" onclick="window.nijorfunc._igOpenCloseMenu(this)" style="display: none;">menu</span>
         <a class="logo" id="header-nijor-logo" n-scope="LDNTGAG1O" onclick="return window.nijor.redirect(this.href)" href="/" style="display: block;"><img src="data:image/svg+xml,%3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 20010904//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'%3e%3csvg version='1.0' xmlns='http://www.w3.org/2000/svg' width='150px' height='150px' viewBox='0 0 1500 1500' preserveAspectRatio='xMidYMid meet'%3e%3cg id='layer101' fill='%2300a2e8' stroke='none'%3e %3cpath d='M150 1397 c0 -8 -5 -17 -11 -19 -7 -2 21 -200 80 -567 50 -310 91 -568 91 -572 0 -5 6 -9 12 -9 7 0 178 165 380 367 l368 368 1 -360 1 -360 99 -94 c55 -52 102 -91 105 -88 10 10 -157 1131 -169 1139 -7 4 -16 8 -22 8 -5 0 -175 -165 -377 -367 l-368 -368 -1 380 -1 380 -94 89 c-54 51 -94 82 -94 73z'/%3e %3c/g%3e%3cg id='layer102' fill='%230ec4f8' stroke='none'%3e %3cpath d='M703 838 l-363 -363 0 -120 0 -120 365 365 366 366 -3 117 -3 117 -362 -362z'/%3e %3c/g%3e%3c/svg%3e" n-scope="LDNTGAG1O"></a>
-        <div class="nav-bar" n-scope="LDNTGAG1O" onroute="window.nijorfunc._igChangeRoute(this,$data)" id="id_uk5SM" style="display: flex;">
+        <div class="nav-bar" n-scope="LDNTGAG1O" onroute="window.nijorfunc._igChangeRoute(this,$data)" id="id_561y" style="display: flex;">
             <a tab="docs" class="nav-link" n-scope="LDNTGAG1O" onclick="return window.nijor.redirect(this.href)" href="/docs" style="color: white;">Docs</a>
             <a href="https://github.com/nijorjs" class="nav-link" n-scope="LDNTGAG1O" style="color: white;">Github</a>
-            <a tab="faq" class="nav-link" n-scope="LDNTGAG1O" onclick="return window.nijor.redirect(this.href)" href="/faq" style="color: white;">FAQ</a>
+            <a tab="faq" class="nav-link" n-scope="LDNTGAG1O" onclick="return window.nijor.redirect(this.href)" href="/faq" style="color: rgb(7, 176, 255);">FAQ</a>
             <button class="material-symbols-sharp theme-dark-btn" n-scope="LDNTGAG1O" onclick="window.nijorfunc._igChangeTheme()">dark_mode</button>
             <button class="material-symbols-sharp theme-light-btn" n-scope="LDNTGAG1O" onclick="window.nijorfunc._igChangeTheme()">light_mode</button>
         </div>
     </div>
 
-    <div style="margin-top: 5rem;" id="routes-slot-/" n-scope="KOJDoi28I8RO1YJ"><div n-scope="5VEnqQap4DP">
-        <h1 n-scope="5VEnqQap4DP">404 Not found!</h1>
-        <p n-scope="5VEnqQap4DP">It seems as if the page you are looking for is under construction or not found. <br n-scope="5VEnqQap4DP">
-        Please go to the <a n-scope="5VEnqQap4DP" onclick="return window.nijor.redirect(this.href)" href="/">Home</a> page.
+    <div style="margin-top: 5rem;" id="routes-slot-/" n-scope="KOJDoi28I8RO1YJ"><div class="container" n-scope="GY40TBAhjtg0V6wrEv4m">
+        <div class="main" id="blog-sidenav" n-scope="2HRV3ez2WGIUbM4f">
+        <ul n-scope="bsRpwjMRppCSun" onnavigate="window.nijorfunc._q2951ChangeRoute(this)" onroute="window.nijorfunc._q2951ChangeRoute(this,$data)" id="id_xxnNAe">
+        <li n-scope="bsRpwjMRppCSun"><a class="nav-link-faq" n-scope="bsRpwjMRppCSun" onclick="return window.nijor.redirect(this.href)" href="/faq" style="color: white;">A Note from the Creator</a></li>
+        <li n-scope="bsRpwjMRppCSun"><a class="nav-link-faq" n-scope="bsRpwjMRppCSun" onclick="return window.nijor.redirect(this.href)" href="/faq/How-Nijor-Works" style="color: rgb(7, 176, 255);">How Nijor Works ?</a></li>
+        <li n-scope="bsRpwjMRppCSun"><a class="nav-link-faq" n-scope="bsRpwjMRppCSun" onclick="return window.nijor.redirect(this.href)" href="/faq/virtual-dom" style="color: white;">Does Nijor have a Virtial DOM ?</a></li>
+        <li n-scope="bsRpwjMRppCSun"><a class="nav-link-faq" n-scope="bsRpwjMRppCSun" onclick="return window.nijor.redirect(this.href)" href="/faq/How-Scoped-CSS-Works" style="color: white;">How Scoped CSS Work ?</a></li>        
+    </ul>
+
+    </div>
+
+        <div class="blog-div" id="routes-slot-/faq" n-scope="GY40TBAhjtg0V6wrEv4m"><div class="container" n-scope="mx7xW8qX">
+        <div class="section" n-scope="tNrO1JIVgwgSLDayofOl">
+        <h1 n-scope="tNrO1JIVgwgSLDayofOl">How Nijor Works ?</h1>
+        <p n-scope="tNrO1JIVgwgSLDayofOl">
+            Many of you might have thought that how Nijor compiler actually works behind the scene ? Well, in this article I'd tell you exactly that ! <br n-scope="mx7xW8qX">
+            The Nijor compiler uses <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('https://rollupjs.org')">RollupJS</span>
+ with <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('https://github.com/nijorjs/nijor-rollup-plugin')">this plugin</span>
+ to first compile the <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">*.nijor</span>
+ code to <span class="highlight-text" n-scope="GTaGrB8" onclick="window.nijorfunc._uwp05Route('nolink')">*.js</span>
+ code and bundle the components into the pages. All the functional attributes get compiled to normal js code. 
         </p>
+        <div class="border" n-scope="tNrO1JIVgwgSLDayofOl"></div>
+    </div>
+
+    </div>
+</div>
     </div>
 </div>
 

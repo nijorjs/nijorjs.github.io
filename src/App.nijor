@@ -1,5 +1,0 @@
-<header n:imported="components/header"/>
-<template>
-    <header></header>
-    <div style="margin-top: 5rem;" n:slot></div>
-</template>

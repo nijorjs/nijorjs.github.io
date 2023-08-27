@@ -1,6 +1,8 @@
 {
     "app":{
-        "name":"nijor-docs"
+        "name":"nijor-docs",
+        "type":"ssr",
+        "dir":"build"
     },
     "module":{
         "input":"src/App.js",
@@ -11,7 +13,6 @@
         "output":"assets/style.css"
     },
     "server":{
-        "port":3000,
-        "appdir":""
+        "port":3000
     }
 }
