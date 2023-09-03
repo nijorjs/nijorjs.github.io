@@ -1,0 +1,1 @@
+var n=new window.nijor.component((async function({_text_:n,lang:e,file:l}){return`<pre n-scope="w4bvpDfyrz7">        <code class="language-${e||"html"}" n-scope="w4bvpDfyrz7">${function(n){return null==n?"":`File : ${n} \n`}(l)}${n}</code>\n    </pre>\n`}),(async function({_text_:n,lang:e,file:l}){hljs.highlightAll()}));export{n as default};
