@@ -1,0 +1,1 @@
+import{component_default as n}from"./component-eyLAX.js";var o=new n(async function(){return'<div class="container" id="routes-slot-/blog" n-scope="8u4ag"></div>'},async function(){});export{o as default};
