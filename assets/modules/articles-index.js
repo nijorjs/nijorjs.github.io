@@ -1,0 +1,1 @@
+import{component_default as o}from"./component-cqOd4.js";var c=new o(async function(){return'<div class="main" n-scope="dcor"><div class="section" n-scope="dcor"><h1 n-scope="dcor">Nijor Blogs</h1><p n-scope="dcor">Get to know about how Nijor works in the articles below.</p></div></div>'},async function(){});export{c as default};

@@ -1,1 +1,0 @@
-import{component_default as n}from"./component-eyLAX.js";var o=new n(async function(){return'<div class="main" n-scope="yjp3sn"><div class="section" n-scope="yjp3sn"><h1 n-scope="yjp3sn">Nijor Blogs</h1><p n-scope="yjp3sn">Get to know about how Nijor works in the articles below.</p></div></div>'},async function(){});export{o as default};

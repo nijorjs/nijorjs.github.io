@@ -1,0 +1,1 @@
+import{component_default as n}from"./component-cqOd4.js";var o=new n(async function(){return'<div class="container" id="routes-slot-/articles" n-scope="omlunu"></div>'},async function(){});export{o as default};
