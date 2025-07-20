@@ -1,1 +1,1 @@
-import{component_default as n}from"./component-Djs.js";var o=new n(async function(){return'<div class="container" id="routes-slot-/articles" n-scope="ojs0g"></div>'},async function(){});export{o as default};
+import{component_default as n}from"./component-XPa6N.js";var o=new n(async function(){return'<div class="container" id="routes-slot-/articles" n-scope="br0r"></div>'},async function(){});export{o as default};
