@@ -1,0 +1,1 @@
+import{t as e}from"../page-X0Xv.js";const t=new e(async function({},e){return document.title=`404 Docs Not Found !`,`<section n-scope="fw5g1"><h1 n-scope="fw5g1">404 Not Found !</h1></section>`},async function({},e){},`docs`);export{t as default};

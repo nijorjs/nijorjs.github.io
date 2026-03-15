@@ -1,1 +1,0 @@
-import{component_default as o}from"./component-XPa6N.js";var s=new o(async function(){return'<div class="main" n-scope="iasrqz"><div class="section" n-scope="iasrqz"><h1 n-scope="iasrqz">Nijor Blogs</h1><p n-scope="iasrqz">Get to know about how Nijor works in the articles below.</p></div></div>'},async function(){});export{s as default};
