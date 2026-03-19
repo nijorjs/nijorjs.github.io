@@ -1,0 +1,1 @@
+import{n as e}from"./reactivity-RZD3K.js";const t=document.createRange();var n=class{constructor(t,n){this.template=t.bind(this),this.cb=n.bind(this),this.state=e({})}async render(e=document.body){let n=await this.template(),r=t.createContextualFragment(n);e.replaceChildren(r),await this.cb()}};export{n as t};
